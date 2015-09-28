@@ -18,4 +18,4 @@ Amixer is the Linux command-line mixer for the ALSA soundcard driver.
 
 ## Future
 
-Automatically detect when a commercial is being played and call this application.
+Automatically detect when a commercial is being played using a Shazam-style fingerprint.
