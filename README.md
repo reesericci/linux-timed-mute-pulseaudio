@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Mute Linux system volume for the specified number of seconds
+Mute Linux system volume for the specified number of seconds.
 
 This is handy for when you are listening to Rdio, or some other music service that has commercials.
 
