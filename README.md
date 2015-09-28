@@ -1,4 +1,5 @@
-# mute
+# Linux Timed Mute
+
 Mute Linux system volume for the specified number of seconds
 
 This is handy for when you are listening to Rdio, or some other music service that has commercials.
