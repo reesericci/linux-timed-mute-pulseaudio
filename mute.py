@@ -11,35 +11,24 @@ import os
 import sys
 import time
 import platform
-
+import pulsectl
 # pylint: disable=line-too-long
 
-USAGE = "[seconds]\n\nThis command only works on Linux with amixer installed.\n\nDefault is 30 seconds."
+USAGE = "[seconds]\n\nThis command only works on Linux with pulseaudio/pipewire-pulse installed.\n\nDefault is 30 seconds."
 DEFAULT_SECS = 30
-
-UBUNTU_CMD='amixer -D pulse set Master 1+'
-CENTOS_CMD='amixer set Master'
-
-UBUNTU_BASED_DISTS = ['LinuxMint', 'Ubuntu']
 
 def timed_mute(seconds):
     """
     Mute for specified number of seconds
     """
-
-    dist = platform.linux_distribution()[0]
-
-
-    if dist == '':
-        raise RuntimeError('Error: Linux OS was not detected')
-    elif dist in UBUNTU_BASED_DISTS:
-        cmd = UBUNTU_CMD
-    else:
-        cmd = CENTOS_CMD
-
-    os.system(cmd + " mute")
+    with pulsectl.Pulse('volume-increaser') as pulse:
+      for sink in pulse.sink_list():
+        pulse.volume_set_all_chans(sink, 0.0)
     time.sleep(seconds)
-    os.system(cmd + " unmute")
+    with pulsectl.Pulse('volume-increaser') as pulse:
+      for sink in pulse.sink_list():
+        pulse.volume_set_all_chans(sink, 0.5)
+
 
 if __name__ == '__main__':
 
