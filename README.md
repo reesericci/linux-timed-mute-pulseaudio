@@ -1,4 +1,4 @@
-# Linux Timed Mute (for pipewire)
+# Linux Timed Mute (for pulseaudio/pipewire-pulse)
 
 ## Introduction
 
@@ -12,6 +12,7 @@ On my system, I created a panel button to call this application and mute for 27 
 
 ## Requirements
 
-This command only works on Linux with *pipewire* installed.
+This command only works on Linux with *pulseaudio/pipewire-pulse* installed.
 
-Pipewire is the freshest audio server on linux. It is installed by default on the latest versions of Fedora and Ubuntu. Otherwise, you are probably running pulseaudio.
+## Future
+ Hopefully we can add support for the native pipewire api soon but it is just not ready yet. No good docs/python implementation. If you figure it out, please send a PR my way.
