@@ -1,4 +1,4 @@
-# Linux Timed Mute
+# Linux Timed Mute (for pipewire)
 
 ## Introduction
 
@@ -12,10 +12,6 @@ On my system, I created a panel button to call this application and mute for 27 
 
 ## Requirements
 
-This command only works on Linux with *amixer* installed.
+This command only works on Linux with *pipewire* installed.
 
-Amixer is the Linux command-line mixer for the ALSA soundcard driver.
-
-## Future
-
-Automatically detect when a commercial is being played using a Shazam-style fingerprint.
+Pipewire is the freshest audio server on linux. It is installed by default on the latest versions of Fedora and Ubuntu. Otherwise, you are probably running pulseaudio.
